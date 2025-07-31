@@ -1,0 +1,140 @@
+   body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f4f8; /* Light blue-gray background */
+        }
+        .container {
+            max-width: 1200px; 
+            background-color: #fafcfcd8;
+            box-shadow: 0 0 20px 8px rgba(14, 113, 241, 0.856); /* blue-purple glow */
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 5px 30px 10px rgba(47, 123, 238, 0.979);/* Max width for larger screens */
+        }
+        .nft-card {
+            box-shadow: 0 0 20px 8px rgba(1, 67, 153, 0.863) /* Pinkish-purple glow */
+        }
+        .nft-card:hover {
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 5px 30px 10px rgba(4, 84, 204, 0.8);
+        }
+        .nft-card {
+            background-color: #ffffff;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 4px 6px rgba(13, 80, 224, 0.932);
+            border-radius: 0.75rem; 
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 5px 30px 10px rgba(243, 244, 245, 0.966); /* Rounded corners */
+        } 
+        .btn-primary {
+            background-color: #40E0D0; /* Indigo */
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+        .btn-primary:hover {
+            background-color: #5a62c7; /* Lighter indigo on hover */
+            transform: translateY(-2px);
+            background-color: #09a545;
+            box-shadow: 0 0 20px 8px rgba(0, 110, 255, 0.6); /* blue-purple glow */
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 5px 30px 10p
+        }
+        .btn-secondary {
+            background-color: #87CEEB; /* Gray */
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+        .btn-secondary:hover {
+            background-color: #87CEEB; /* Lighter gray on hover */
+            transform: translateY(-2px);
+            background-color: #09a545;
+            box-shadow: 0 0 20px 8px rgba(0, 110, 255, 0.6); /* blue-purple glow */
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 5px 30px 10p
+        }
+        .message-box {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background-color: #38a169; /* Green for success */
+            color: white;
+            padding: 1rem 1.5rem;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            display: none; /* Hidden by default */
+        }
+        .colorful-shadow-1 {
+            box-shadow: 0 0 20px 8px rgba(0, 47, 255, 0.87); /* Pinkish-purple glow */
+        }
+        .colorful-shadow-1:hover {
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 5px 30px 10px rgba(0, 68, 255, 0.8);
+        }
+        .message-box.error {
+            background-color: #e53e3e; /* Red for error */
+        }
+        .loading-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(253, 253, 253, 0.973);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1001;
+            display: none; /* Hidden by default */
+        }
+        .spinner {
+            border: 4px solid rgba(255, 255, 255, 0.986);
+            border-top: 4px solid #fff;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Modal Styles */
+        .modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.6);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1002;
+            display: none;
+        }
+        .modal-content {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 0.75rem;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            width: 90%;
+            max-width: 400px;
+            text-align: center;
+        }
+        .modal-input {
+            width: 100%;
+            padding: 0.75rem;
+            margin-top: 1rem;
+            margin-bottom: 1.5rem;
+            border: 1px solid #d1d5db;
+            border-radius: 0.375rem;
+            font-size: 1rem;
+        }
+        .modal-buttons button {
+            margin: 0 0.5rem;
+        }
+    

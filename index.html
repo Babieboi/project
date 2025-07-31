@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CrossFi NFT Marketplace Concept</title>
+    <!-- Tailwind CSS CDN for easy styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script type="module" src="main.js"></script>
+</head>
+<body class="min-h-screen flex flex-col items-center py-8 px-4">
+    <div class="container mx-auto p-6 bg-white rounded-lg shadow-xl mb-8 w-full">
+        <h1 class="text-4xl font-bold text-center text-gray-800 mb-6 sm:text-3xl">CrossFi NFT Marketplace Concept</h1>
+        <p class="text-center text-gray-600 mb-8 text-sm sm:text-base">
+            A conceptual NFT marketplace, showcasing functionalities that could be developed on a blockchain like CrossFi Chain. It simulates NFT minting, listing, and buying.
+        </p>
+
+        <!-- User Info Section -->
+        <div class="bg-blue-100 p-4 rounded-lg mb-8">
+            <h2 class="text-2xl font-semibold text-blue-800 mb-2 sm:text-xl">Your Wallet</h2>
+            <p class="text-blue-700 text-sm sm:text-base"> User ID: <span id="userIdDisplay" class="font-mono text-xs sm:text-sm break-all">...</span></p>
+            <p class="text-blue-700 text-sm sm:text-base">Enter Your Name: <input type="text" id="displayNameInput" class="shadow appearance-none border rounded py-1 px-2 text-gray-700 leading-tight focus:outline-none focus:shadow-outline w-full sm:w-48 inline-block mt-1" placeholder="Your Display Name"></p>
+            <button id="saveDisplayNameBtn" class="btn-secondary mt-2 text-sm px-3 py-1 w-full sm:w-auto">Save Name</button>
+            <hr class="my-3 border-blue-300">
+            <p class="text-blue-700 text-sm sm:text-base">Active Wallet: <span id="activeWalletDisplay" class="font-bold">Firebase Account</span></p>
+            <p class="text-blue-700 text-sm sm:text-base">Balance: <span id="userBalanceDisplay" class="font-bold">Loading...</span></p>
+            <div class="flex flex-col sm:flex-row justify-center gap-2 mt-3">
+                <button id="connectSimulatedWalletBtn" class="btn-primary text-sm px-3 py-1 w-full sm:w-auto">Connect Simulated Wallet</button>
+                <button id="useFirebaseWalletBtn" class="btn-secondary text-sm px-3 py-1 w-full sm:w-auto">Reset</button>
+            </div>
+        </div>
+
+        <!-- Mint NFT Section -->
+        <div class="mb-10 p-6 border border-gray-200 rounded-lg shadow-sm">
+            <h2 class="text-3xl font-semibold text-gray-800 mb-4 sm:text-2xl">Mint a New NFT</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                    <label for="nftName" class="block text-gray-700 text-sm font-bold mb-2">NFT Name:</label>
+                    <input type="text" id="nftName" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="e.g., Digital Art Piece #1">
+                </div>
+                <div>
+                    <label for="nftDescription" class="block text-gray-700 text-sm font-bold mb-2">NFT Description:</label>
+                    <textarea id="nftDescription" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline h-24 resize-none" placeholder="A unique digital creation..."></textarea>
+                </div>
+            </div>
+            <div class="mt-6 text-center">
+                <button id="mintNftBtn" class="btn-primary hover:scale-105 transform transition duration-200">Mint NFT</button>
+            </div>
+        </div>
+
+        <!-- Your NFTs Section -->
+        <div class="mb-10 p-6 border border-gray-200 rounded-lg shadow-sm">
+            <h2 class="text-3xl font-semibold text-gray-800 mb-4 sm:text-2xl">Your NFTs</h2>
+            <div id="yourNftsContainer" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- NFTs will be dynamically loaded here -->
+                <p id="noYourNfts" class="text-gray-500 col-span-full text-center">No NFTs minted yet. Mint one above!</p>
+            </div>
+        </div>
+
+        <!-- Marketplace Section -->
+        <div class="p-6 border border-gray-200 rounded-lg shadow-sm">
+            <h2 class="text-3xl font-semibold text-gray-800 mb-4 sm:text-2xl">Marketplace</h2>
+            <div id="marketplaceContainer" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Marketplace NFTs will be dynamically loaded here -->
+                <p id="noMarketplaceNfts" class="text-gray-500 col-span-full text-center">No NFTs listed for sale yet.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Message Box -->
+    <div id="messageBox" class="message-box"></div>
+
+    <!-- Loading Overlay -->
+    <div id="loadingOverlay" class="loading-overlay">
+        <div class="spinner"></div>
+    </div>
+
+    <!-- Price Input Modal -->
+    <div id="priceModal" class="modal">
+        <div class="modal-content">
+            <h3 class="text-xl font-semibold mb-4">Enter Listing Price (XFI)</h3>
+            <input type="number" id="modalPriceInput" class="modal-input" placeholder="e.g., 100" min="0.01" step="0.01">
+            <div class="modal-buttons">
+                <button id="modalConfirmBtn" class="btn-primary">Confirm</button>
+                <button id="modalCancelBtn" class="btn-secondary">Cancel</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
